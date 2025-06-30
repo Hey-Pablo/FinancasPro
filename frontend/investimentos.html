@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investimentos | FinançasPro</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/style.css" />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2e2e6f27b.js" crossorigin="anonymous"></script>
+
+  <!-- JS -->
+  <script defer src="JS/router.js"></script>
+  <script defer src="JS/theme.js"></script>
+  <script defer src="JS/investimentos.js"></script>
+</head>
+
+<body>
+  <!-- Menu lateral -->
+  <div class="sidebar">
+    <nav class="menu-retro">
+      <ul>
+        <li><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i>Dashboard</a></li>
+        <li><a href="despesas.html"><i class="fa-solid fa-stopwatch"></i>Despesas</a></li>
+        <li><a href="receitas.html"><i class="fa-solid fa-coins"></i>Receitas</a></li>
+        <li><a class="ativo" href="investimentos.html"><i class="fa-solid fa-chart-line"></i>Investimentos</a></li>
+        <li><a href="metas.html"><i class="fa-solid fa-bullseye"></i>Metas</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-file-lines"></i>Relatórios</a></li>
+        <li><a href="configuracoes.html"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+        <li><a href="perfil.html"><i class="fa-solid fa-user"></i>Perfil</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <h1>Investimentos</h1>
+
+    <!-- Abas -->
+    <div class="abas-investimentos">
+      <button id="btn-aba-investimentos" class="ativo">Meus Investimentos</button>
+      <button id="btn-aba-proventos">Proventos Recebidos</button>
+    </div>
+
+    <!-- Aba: Meus Investimentos -->
+    <div id="conteudo-investimentos" class="aba ativo">
+      <div class="bloco-resumo">
+        <div class="resumo-investimentos">
+          <div>
+            <h3>Valor Investido</h3>
+            <p>R$ 0,00</p>
+          </div>
+          <div>
+            <h3>Valor Atual</h3>
+            <p>R$ 0,00</p>
+          </div>
+          <div>
+            <h3>Ganho/Perda</h3>
+            <p class="positivo">R$ 0,00</p>
+          </div>
+          <div>
+            <h3>Rentabilidade</h3>
+            <p class="positivo">0.00%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-investimentos destaque">
+        <div class="cabecalho-card">
+          <h2>Meus Investimentos (0)</h2>
+          <button id="btn-novo-investimento">+ Novo Investimento</button>
+        </div>
+        <div id="lista-investimentos" class="lista-cards">
+          <div class="mensagem-vazia destaque-interno">
+            <p>Você ainda não cadastrou nenhum investimento.<br>
+              Clique em "Novo Investimento" para começar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Aba: Proventos Recebidos -->
+    <div id="conteudo-proventos" class="aba">
+      <div class="bloco-resumo">
+        <div class="resumo-proventos">
+          <div>
+            <h3>Total Proventos</h3>
+            <p>R$ 0,00<br><small>0 proventos recebidos</small></p>
+          </div>
+          <div>
+            <h3>Este Ano</h3>
+            <p>R$ 0,00<br><small>Recebidos em 2025</small></p>
+          </div>
+          <div>
+            <h3>Este Mês</h3>
+            <p>R$ 0,00<br><small>Recebidos neste mês</small></p>
+          </div>
+          <div>
+            <h3>Média Mensal</h3>
+            <p>R$ 0,00<br><small>Média mensal 2025</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-investimentos destaque">
+        <div class="cabecalho-card">
+          <h2>Histórico de Proventos (0)</h2>
+          <button id="btn-novo-provento">+ Novo Provento</button>
+        </div>
+        <div id="lista-proventos" class="lista-cards-proventos">
+          <div class="mensagem-vazia destaque-interno">
+            <p>Você ainda não cadastrou nenhum provento.<br>
+              Clique em "Novo Provento" para começar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- Botão de alternância de tema -->
+<button class="theme-toggle" id="toggleThemeBtn" title="Alternar Tema">
+  <i id="themeIcon" class="fa-solid fa-moon"></i>
+</button>
+
+
+
+  </div>
+
+  <!-- Modal: Novo Investimento -->
+  <div id="modal-investimento" class="modal">
+    <div class="modal-content">
+      <span id="fechar-investimento" class="fechar">&times;</span>
+      <h3>Novo Investimento</h3>
+      <form id="form-investimento">
+        <input type="text" placeholder="Nome do ativo" required />
+        <input type="number" placeholder="Valor investido" required />
+        <input type="date" required />
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Novo Provento -->
+  <div id="modal-provento" class="modal">
+    <div class="modal-content">
+      <span id="fechar-provento" class="fechar">&times;</span>
+      <h3>Novo Provento</h3>
+      <form id="form-provento">
+        <input type="text" placeholder="Nome do ativo" required />
+        <input type="number" placeholder="Valor do provento" required />
+        <input type="date" required />
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Alternância de abas
+    const btnInvestimentos = document.getElementById("btn-aba-investimentos");
+    const btnProventos = document.getElementById("btn-aba-proventos");
+    const abaInvestimentos = document.getElementById("conteudo-investimentos");
+    const abaProventos = document.getElementById("conteudo-proventos");
+
+    btnInvestimentos.addEventListener("click", () => {
+      abaInvestimentos.classList.add("ativo");
+      abaProventos.classList.remove("ativo");
+      btnInvestimentos.classList.add("ativo");
+      btnProventos.classList.remove("ativo");
+    });
+
+    btnProventos.addEventListener("click", () => {
+      abaInvestimentos.classList.remove("ativo");
+      abaProventos.classList.add("ativo");
+      btnInvestimentos.classList.remove("ativo");
+      btnProventos.classList.add("ativo");
+    });
+  </script>
+</body>
+
+</html>

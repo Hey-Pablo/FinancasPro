@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metas | FinançasPro</title>
+
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <script src="https://kit.fontawesome.com/8dfb69a3f6.js" crossorigin="anonymous"></script>
+    <script defer src="./JS/router.js"></script>
+    <script defer src="./JS/theme.js"></script>
+    <script defer src="./JS/metas.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Menu lateral -->
+        <aside class="sidebar">
+            <nav class="menu-retro">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i> Dashboard</a></li>
+                    <li><a href="despesas.html"><i class="fa-solid fa-stopwatch"></i> Despesas</a></li>
+                    <li><a href="receitas.html"><i class="fa-solid fa-coins"></i> Receitas</a></li>
+                    <li><a href="investimentos.html"><i class="fa-solid fa-chart-line"></i> Investimentos</a></li>
+                    <li><a class="ativo" href="metas.html"><i class="fa-solid fa-bullseye"></i> Metas</a></li>
+                    <li><a href="relatorios.html"><i class="fa-solid fa-file-lines"></i> Relatórios</a></li>
+                    <li><a href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+                    <li><a href="perfil.html"><i class="fa-solid fa-user"></i> Perfil</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <h1>Metas Financeiras</h1>
+
+            <section class="receitas-container">
+                <!-- Formulário -->
+                <div class="form-card">
+                    <h2>Criar Nova Meta</h2>
+                    <form id="formMeta">
+                        <label>
+                            Título da Meta
+                            <input type="text" id="tituloMeta" placeholder="Ex: Viagem de férias" required />
+                        </label>
+
+                        <label>
+                            Valor Total (R$)
+                            <input type="number" id="valorTotal" placeholder="Ex: 5000" required />
+                        </label>
+
+                        <label>
+                            Valor Inicial (R$)
+                            <input type="number" id="valorInicial" value="0" required />
+                        </label>
+
+                        <label>
+                            Data Limite
+                            <input type="date" id="dataLimite" />
+                        </label>
+
+                        <label>
+                            Categoria
+                            <select id="categoriaMeta">
+                                <option>Poupança</option>
+                                <option>Investimento</option>
+                                <option>Viagem</option>
+                                <option>Educação</option>
+                                <option>Moradia</option>
+                                <option>Veículo</option>
+                                <option>Tecnologia</option>
+                                <option>Saúde</option>
+                                <option selected>Outro</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Descrição (opcional)
+                            <textarea id="descricaoMeta" rows="3"
+                                placeholder="Descreva detalhes sobre esta meta..."></textarea>
+                        </label>
+
+                        <button type="submit">
+                            <i class="fa-solid fa-circle-plus"></i> Criar Meta
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Mensagem ou lista de metas -->
+                <div class="lista-card">
+                    <div class="item-lista" style="border: 1px solid #3b82f6; background-color: #1e2a4a;">
+                        <i class="fa-solid fa-circle-info"></i> Você ainda não tem metas financeiras. Comece criando sua
+                        primeira meta!
+                    </div>
+                </div>
+            </section>
+        </main>
+
+<!-- Botão de alternância de tema -->
+<button class="theme-toggle" id="toggleThemeBtn" title="Alternar Tema">
+  <i id="themeIcon" class="fa-solid fa-moon"></i>
+</button>
+
+
+    </div>
+</body>
+
+</html>

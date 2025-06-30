@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinançasPro | Configurações</title>
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <script defer src="./JS/router.js"></script>
+  <script defer src="./JS/theme.js"></script>
+  <script defer src="./JS/configuracoes.js"></script>
+  <script src="https://kit.fontawesome.com/8dfb69a3f6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Menu lateral -->
+  <aside class="sidebar">
+    <nav class="menu-retro">
+      <ul>
+        <li><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i> Dashboard</a></li>
+        <li><a href="despesas.html"><i class="fa-solid fa-stopwatch"></i> Despesas</a></li>
+        <li><a href="receitas.html"><i class="fa-solid fa-coins"></i> Receitas</a></li>
+        <li><a href="investimentos.html"><i class="fa-solid fa-chart-line"></i> Investimentos</a></li>
+        <li><a href="metas.html"><i class="fa-solid fa-bullseye"></i> Metas</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-file-lines"></i> Relatórios</a></li>
+        <li><a class="ativo" href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+        <li><a href="perfil.html"><i class="fa-solid fa-user"></i> Perfil</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <h1>Configurações</h1>
+
+    <!-- Abas -->
+    <div class="tabs">
+      <button class="tab ativo" data-aba="geral" onclick="mostrarAba('geral')">
+        <i class="fa-solid fa-sliders"></i> geral
+      </button>
+      <button class="tab" data-aba="categorias" onclick="mostrarAba('categorias')">
+        <i class="fa-solid fa-tags"></i> categorias
+      </button>
+      <button class="tab" data-aba="seguranca" onclick="mostrarAba('seguranca')">
+        <i class="fa-solid fa-shield-halved"></i> seguranca
+      </button>
+    </div>
+
+    <!-- Aba Geral -->
+    <section id="geral" class="aba ativo">
+      <div class="form-card">
+        <h2>Configurações Gerais</h2>
+        <label>
+          Moeda
+          <select>
+            <option>Real Brasileiro (R$)</option>
+            <option>Dólar Americano (US$)</option>
+          </select>
+        </label>
+        <label>
+          Formato de Data
+          <select>
+            <option>DD/MM/AAAA</option>
+            <option>MM/DD/AAAA</option>
+          </select>
+        </label>
+        <label class="checkbox-card">
+          <input type="checkbox" checked>
+          <div class="textos">
+            <strong>Modo Escuro</strong>
+            <small>Ativar modo escuro na interface</small>
+          </div>
+        </label>
+        <button>Salvar Alterações</button>
+      </div>
+    </section>
+
+    <!-- Aba Categorias -->
+    <section id="categorias" class="aba">
+      <div class="categorias-grid">
+        <!-- Bloco de Despesas -->
+        <div class="categoria-bloco">
+          <h2>Gerenciar Categorias</h2>
+          <h3>Categorias de Despesa</h3>
+          <div class="categorias-lista" id="lista-despesas">
+            <div class="categoria-item"><span>Alimentação</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Moradia</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Transporte</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Lazer</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Saúde</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Educação</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+          </div>
+          <input type="text" id="input-despesa" class="nova-categoria" placeholder="Nova categoria" />
+          <button class="add-btn add-categoria" data-tipo="despesa">Adicionar</button>
+        </div>
+
+        <!-- Bloco de Receitas -->
+        <div class="categoria-bloco">
+          <h3>Categorias de Receita</h3>
+          <div class="categorias-lista" id="lista-receitas">
+            <div class="categoria-item"><span>Salário</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Freelancer</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+            <div class="categoria-item"><span>Investimentos</span><button class="editar-btn">Editar</button><button class="remover-btn">Remover</button></div>
+          </div>
+          <input type="text" id="input-receita" class="nova-categoria" placeholder="Nova categoria" />
+          <button class="add-btn add-categoria" data-tipo="receita">Adicionar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aba Segurança -->
+    <section id="seguranca" class="aba">
+      <div class="form-card">
+        <h2>Segurança da Conta</h2>
+        <label>
+          Senha Atual
+          <input type="password" />
+        </label>
+        <label>
+          Nova Senha
+          <input type="password" />
+        </label>
+        <label>
+          Confirmar Nova Senha
+          <input type="password" />
+        </label>
+        <label class="checkbox-card">
+          <input type="checkbox">
+          <div class="textos">
+            <strong>Autenticação em Dois Fatores</strong>
+            <small>Aumentar a segurança da sua conta</small>
+          </div>
+        </label>
+        <button>Atualizar Senha</button>
+      </div>
+    </section>
+  </main>
+
+
+<!-- Botão de alternância de tema -->
+<button class="theme-toggle" id="toggleThemeBtn" title="Alternar Tema">
+  <i id="themeIcon" class="fa-solid fa-moon"></i>
+</button>
+
+</body>
+</html>

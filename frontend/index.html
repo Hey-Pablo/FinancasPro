@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | FinançasPro</title>
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <script defer src="./JS/router.js"></script>
+  <script defer src="./JS/theme.js"></script>
+  <script src="https://kit.fontawesome.com/8dfb69a3f6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="main-dashboard">
+    <h1 class="titulo-dashboard">Vamos começar? Escolha por onde.</h1>
+    <p class="subtitulo-dashboard">Gerencie suas finanças de forma inteligente com todas as ferramentas que você precisa</p>
+
+    <div class="grid-opcoes-dashboard">
+
+      <a href="despesas.html" class="card-opcao cor-verde">
+        <i class="fa-solid fa-arrow-down-up-across-line"></i>
+        <strong>Despesas</strong>
+        <span>Adicione suas Despesas</span>
+      </a>
+
+      <a href="receitas.html" class="card-opcao cor-roxa">
+        <i class="fa-solid fa-file-alt"></i>
+        <strong>Receitas</strong>
+        <span>Adicione suas Receitas</span>
+
+      <a href="investimentos.html" class="card-opcao cor-laranja">
+        <i class="fa-solid fa-chart-line"></i>
+        <strong>Investimentos</strong>
+        <span>Portfólio e ativos</span>
+      </a>
+
+      <a href="perfil.html" class="card-opcao cor-rosa">
+        <i class="fa-solid fa-user"></i>
+        <strong>Perfil</strong>
+        <span>Dados pessoais</span>
+      </a>
+
+      <a href="metas.html" class="card-opcao cor-rosa">
+        <i class="fa-solid fa-user"></i>
+        <strong>Metas</strong>
+        <span>Defina Suas Metas</span>
+      </a>
+
+      <a href="configuracoes.html" class="card-opcao cor-cinza">
+        <i class="fa-solid fa-gear"></i>
+        <strong>Configurações</strong>
+        <span>Preferências do app</span>
+      </a>
+    </div>
+
+    <p class="frase-final">Organize • Controle • Prospere</p>
+  </div>
+
+  <button class="theme-toggle" id="toggleThemeBtn" title="Alternar Tema">
+    <i id="themeIcon" class="fa-solid fa-moon"></i>
+  </button>
+</body>
+</html>
